@@ -1,0 +1,9 @@
+{
+    "name": "GokuBracken",
+    "version_number": "1.4.1",
+    "website_url": "",
+    "description": "Replaces the Bracken's model with a model of Goku from the Tenkaichi games",
+     "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100"
+    ]
+}
