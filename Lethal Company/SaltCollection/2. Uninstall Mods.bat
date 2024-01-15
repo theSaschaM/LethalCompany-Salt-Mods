@@ -1,18 +1,21 @@
 @echo off
-cd /d "%~dp0"  REM Wechselt zum Verzeichnis der Batch-Datei
+title Uninstall Mods
+cd /d "%~dp0"  REM Changes to the directory of the batch file
 
-set "zielverzeichnis=%~dp0\..\BepInEx\plugins"
+set "destination_directory=%~dp0\..\BepInEx\plugins"
 
-REM Überprüft, ob das Zielverzeichnis existiert
-if not exist "%zielverzeichnis%" (
-    echo Das Zielverzeichnis existiert nicht.
+REM Checks if the destination directory exists
+if not exist "%destination_directory%" (
+    echo The destination directory does not exist.
     exit /b
 )
 
-REM Navigiert zum Zielverzeichnis
-cd /d "%zielverzeichnis%"
+REM Navigates to the destination directory
+cd /d "%destination_directory%"
 
-REM Löscht alle Inhalte im Zielverzeichnis
+REM Deletes all contents in the destination directory
 del /q *.* 2>nul
 
-echo Alle Inhalte im Verzeichnis "%zielverzeichnis%" wurden gelöscht.
+echo All contents in the directory "%destination_directory%" have been deleted.
+
+PAUSE
