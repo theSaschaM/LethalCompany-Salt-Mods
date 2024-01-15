@@ -1,16 +1,19 @@
 @echo off
-cd /d "%~dp0"  REM Wechselt zum Verzeichnis der Batch-Datei
+title Install Mods
+cd /d "%~dp0"  REM Changes to the directory of the batch file
 
-set "quellverzeichnis=%~dp0\Mods"
-set "zielverzeichnis=%~dp0\.."
+set "source_directory=%~dp0\Mods"
+set "destination_directory=%~dp0\.."
 
-REM Überprüft, ob das Quellverzeichnis existiert
-if not exist "%quellverzeichnis%" (
-    echo Das Quellverzeichnis existiert nicht.
+REM Checks if the source directory exists
+if not exist "%source_directory%" (
+    echo The source directory does not exist.
     exit /b
 )
 
-REM Kopiert alle Dateien und Ordner aus dem Quellverzeichnis ins Zielverzeichnis
-xcopy /s /y "%quellverzeichnis%\*" "%zielverzeichnis%"
+REM Copies all files and folders from the source directory to the destination directory
+xcopy /s /y "%source_directory%\*" "%destination_directory%"
 
-echo Alle Dateien und Ordner aus dem Verzeichnis "%quellverzeichnis%" wurden ins übergeordnete Verzeichnis kopiert.
+echo All files and folders from the directory "%source_directory%" have been copied to the parent directory.
+
+PAUSE
